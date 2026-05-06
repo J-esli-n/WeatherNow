@@ -1,0 +1,78 @@
+{
+  "theme": "light",
+  "archetype": "Archetype 1 (Organic & Soft) + Crystal Glassmorphism",
+  "typography": {
+    "heading_font": "Outfit",
+    "body_font": "Manrope",
+    "scale": {
+      "h1": "text-6xl tracking-tighter font-light",
+      "h2": "text-4xl tracking-tight font-medium",
+      "h3": "text-2xl tracking-tight font-medium",
+      "body": "text-base leading-relaxed text-slate-800",
+      "labels": "text-xs tracking-[0.2em] uppercase font-bold text-slate-500",
+      "temperature_display": "text-[5rem] sm:text-[6rem] leading-none tracking-tighter font-light text-slate-900"
+    }
+  },
+  "colors": {
+    "background_fallback": "#F0F9FF",
+    "text_primary": "#0F172A",
+    "text_secondary": "#475569",
+    "accent_primary": "#38BDF8",
+    "accent_warm": "#FBBF24"
+  },
+  "surfaces": {
+    "crystal_glass": "bg-white/40 backdrop-blur-2xl border border-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.08)] rounded-3xl",
+    "heavy_glass": "bg-white/60 backdrop-blur-3xl border border-white/50 shadow-sm rounded-2xl",
+    "search_bar": "bg-white/40 backdrop-blur-md border border-white/50 shadow-inner rounded-full px-6 py-3 focus-within:bg-white/60 focus-within:ring-2 focus-within:ring-white/80 transition-all",
+    "hover_state": "hover:bg-white/50 hover:-translate-y-1 transition-all duration-300"
+  },
+  "layout": {
+    "spacing_system": "Generous padding inside panels (p-6 or p-8). Avoid cramped content.",
+    "bento_grid": "grid grid-cols-1 md:grid-cols-12 gap-6 max-w-5xl mx-auto",
+    "hero_card": "col-span-1 md:col-span-8 row-span-2 min-h-[300px]",
+    "metric_cards": "col-span-1 md:col-span-4",
+    "forecast_strip": "col-span-1 md:col-span-12 flex gap-4 overflow-x-auto pb-4 snap-x"
+  },
+  "media": {
+    "bg_sunny": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/67aeb30f-81a3-4159-927c-05b5f14cafef/images/670d80f6f3b2efdf5609ed9b2dc7ad077f7600838daf38497ca2da1429b94406.png",
+      "usage": "Background image for clear/sunny weather condition. Span entire viewport, object-cover."
+    },
+    "bg_rainy": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/67aeb30f-81a3-4159-927c-05b5f14cafef/images/c7684f6c7bb3d9100f335a9a714fc9b357ca48c48831b541396b1e214e4c7f2a.png",
+      "usage": "Background image for rain/drizzle/storm weather condition."
+    },
+    "bg_night": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/67aeb30f-81a3-4159-927c-05b5f14cafef/images/6ef0c8ee6840c25a6b4ed427ef0b74c2a5dcdb0f72cce5fad4dcede64970fd30.png",
+      "usage": "Background image for clear night weather condition."
+    },
+    "bg_cloudy": {
+      "url": "https://images.unsplash.com/photo-1753728879531-3bf8c3626663?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwyfHxjbG91ZHklMjBza3klMjBhdG1vc3BoZXJpYyUyMG1pbmltYWx8ZW58MHx8fHwxNzc3OTk5NjM5fDA&ixlib=rb-4.1.0&q=85",
+      "usage": "Background image for cloudy/overcast weather condition."
+    }
+  },
+  "motion": {
+    "page_load": "Fade in and slight upward translation (staggered) for bento grid cards using framer-motion.",
+    "hover": "Cards should have a subtle hover effect (slight lift and brightness increase).",
+    "weather_icons": "Subtle looping float or pulse animations for main weather condition icons."
+  },
+  "components_strategy": {
+    "icons": "lucide-react, using absolute consistent sizes and light stroke-width.",
+    "search": "Custom glassmorphism input. Do not use default opaque Shadcn inputs.",
+    "temperature_toggle": "Pill-shaped toggle, active state is a solid white background block shifting over the C or F.",
+    "general": "Avoid standard generic Shadcn 'Card' wrappers. Use raw divs with 'crystal_glass' classes defined above for precise frosted effect."
+  },
+  "accessibility": {
+    "contrast": "Text over glass must be highly contrasted. Use slate-900 or slate-800.",
+    "testing_ids": "Mandatory data-testid attributes on: city-search-input, search-submit-button, geolocate-button, temp-unit-toggle, current-weather-card."
+  },
+  "instructions_to_main_agent": [
+    "Implement the background logic to switch between the 4 provided media URLs based on current OpenWeatherMap conditions.",
+    "Apply 'background-size: cover', 'background-position: center', and 'background-attachment: fixed' to the main container.",
+    "Wrap all content inside a bento grid structure to give a dashboard-like feeling, but space it out beautifully.",
+    "For the 5-day forecast, use a horizontal scroll layout on mobile and a wrap or flex row on desktop.",
+    "Use Outfit for the main temperature number, making it very large but thin (font-light).",
+    "Ensure the entire app is fully responsive, defaulting to grid-cols-1 on mobile."
+  ]
+}
+
